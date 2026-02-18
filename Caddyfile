@@ -1,0 +1,11 @@
+{$DOMAIN:localhost} {
+	@msc_id path_regexp /\d+
+
+	handle_errors {
+		respond "{err.status_code} {err.status_text}"
+	}
+
+	redir / {$BASE_URL}
+	redir @msc_id {$BASE_URL}{$BASE_PATH}{re.0}
+	error 404
+}
