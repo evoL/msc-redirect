@@ -34,3 +34,7 @@ Some parameters have to be provided as environment variables.
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
+
+## Contact
+
+Join the Matrix room: [#msc-re:evolved.systems](https://matrix.to/#/#msc-re:evolved.systems).
