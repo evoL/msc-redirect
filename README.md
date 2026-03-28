@@ -12,7 +12,12 @@ It's built using the [Caddy] HTTP server for simplicity. See the [Caddyfile](./C
 
 The service listens on a domain and redirects requests to the official repository. For example, a request to `https://msc.re/1234` will be redirected to `https://github.com/matrix-org/matrix-spec-proposals/pulls/1234`.
 
-Only numeric paths (`/1234`) are redirected to the pull request page. The home page redirects to the repository's home page. All other paths return 404 errors.
+The following paths are accepted:
+
+- `/` — redirects to the repository's home page
+- `/1234`, `/msc1234`, `/MSC1234` (case insensitive) — redirects to the pull request page
+  
+All other paths return 404 errors.
 
 ## Running
 
