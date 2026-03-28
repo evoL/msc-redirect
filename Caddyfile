@@ -1,5 +1,5 @@
 {$DOMAIN:localhost} {
-	@msc_id path_regexp /\d+
+	@msc_id path_regexp /(?i)(?:msc)?(\d+)
 
 	handle_errors {
 		respond "{err.status_code} {err.status_text}"
@@ -7,6 +7,6 @@
 
     log
 	redir / {$BASE_URL}
-	redir @msc_id {$BASE_URL}{$BASE_PATH}{re.0}
+	redir @msc_id {$BASE_URL}{$BASE_PATH}/{re.1}
 	error 404
 }
